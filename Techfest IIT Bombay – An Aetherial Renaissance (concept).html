@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Techfest IIT Bombay – An Aetherial Renaissance (concept)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d1122;--deep:#151b36;--line:#2c3562;--ink:#f0e6cc;--mute:#a4a9c4;--gold:#e0b45a;--aether:#7fd6ff;--violet:#8b7bff;
+ box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#efe3c4;--deep:#e4d5ae;--line:#b9a577;--ink:#1a1f3d;--mute:#4d5273;--gold:#8a5f0c;--aether:#0a5c86;--violet:#4a3fb5}}
+:root[data-theme="light"]{--bg:#efe3c4;--deep:#e4d5ae;--line:#b9a577;--ink:#1a1f3d;--mute:#4d5273;--gold:#8a5f0c;--aether:#0a5c86;--violet:#4a3fb5}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 Manrope,system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3,.serif{font-family:"Cormorant Garamond",Georgia,serif;margin:0;line-height:1}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--aether);outline-offset:3px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 1.25rem}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:62px}
+.logo{font:700 1.6rem "Cormorant Garamond",serif;text-decoration:none;letter-spacing:.02em}
+.logo small{font:500 .8rem Manrope;color:var(--mute);margin-left:.6rem}
+nav{display:flex;gap:1.4rem;align-items:center;font-size:.95rem}
+nav a{text-decoration:none;color:var(--mute)}nav a:hover{color:var(--ink)}
+.btn{display:inline-block;font:700 1rem Manrope;text-decoration:none;color:#1a1204;background:linear-gradient(120deg,#f3d58c,#d9a63f);padding:.85rem 1.5rem;border:0;border-radius:999px;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px -6px var(--gold)}
+.btn.line{background:none;color:var(--ink);border:1px solid var(--line)}
+.btn.line:hover{border-color:var(--aether);box-shadow:none}
+.sm{padding:.5rem 1rem;font-size:.9rem}
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(500px circle at var(--gx,70%) var(--gy,40%),color-mix(in srgb,var(--violet) 32%,transparent),transparent 70%);pointer-events:none}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.05fr 1fr;gap:2rem;align-items:center;padding-top:3.5rem;padding-bottom:3.5rem}
+.edition{color:var(--gold);font-weight:700;font-size:.95rem;margin-bottom:1rem}
+h1{font-size:clamp(3.2rem,8vw,6.6rem);font-weight:700;letter-spacing:-.01em}
+h1 em{display:block;font-weight:500;color:var(--aether)}
+.dates{font:500 1.5rem "Cormorant Garamond",serif;margin:1.5rem 0 .4rem}
+.lede{color:var(--mute);max-width:40ch;margin:0 0 2rem}
+.cta{display:flex;gap:.9rem;flex-wrap:wrap}
+.orrery{position:relative;aspect-ratio:1;max-width:560px;width:100%;margin:0 auto}
+.orrery svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.rg{transform-origin:300px 300px;animation:rot 90s linear infinite}
+.r1{translate:calc(var(--mx,0)*10px) calc(var(--my,0)*10px)}
+.r2{translate:calc(var(--mx,0)*-14px) calc(var(--my,0)*-14px);animation-duration:60s;animation-direction:reverse}
+.r3{translate:calc(var(--mx,0)*20px) calc(var(--my,0)*20px);animation-duration:40s}
+.r4{animation-duration:26s;animation-direction:reverse}
+@keyframes rot{to{transform:rotate(360deg)}}
+.clock{position:absolute;inset:0;display:grid;place-content:center;text-align:center}
+.clock b{display:block;font:700 clamp(4rem,12vw,7rem)/.9 "Cormorant Garamond",serif;color:var(--ink)}
+.clock span{display:block;color:var(--mute);font-size:.9rem}
+.clock .hms{margin-top:.6rem;font:500 1.25rem "Cormorant Garamond",serif;color:var(--gold);font-variant-numeric:tabular-nums}
+section{padding:5rem 0;border-bottom:1px solid var(--line)}
+h2{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:700;margin-bottom:1rem}
+.sub{color:var(--mute);max-width:52ch;margin:0 0 2.5rem}
+.codex{display:grid;grid-template-columns:260px 1fr;border:1px solid var(--line);background:var(--deep)}
+.tabs{display:flex;flex-direction:column;border-right:1px solid var(--line)}
+.tabs button{font:700 1.7rem "Cormorant Garamond",serif;text-align:left;color:var(--mute);background:none;border:0;border-bottom:1px solid var(--line);padding:1.4rem;cursor:pointer;transition:background .2s,color .2s}
+.tabs button:last-child{border-bottom:0}
+.tabs button[aria-selected=true]{color:var(--ink);background:color-mix(in srgb,var(--violet) 18%,transparent);box-shadow:inset 3px 0 var(--gold)}
+.folio{padding:2.25rem;min-height:340px}
+.folio h3{font-size:2.4rem;margin-bottom:.8rem}
+.folio p{color:var(--mute);max-width:50ch;margin:0 0 1.5rem}
+.folio ul{list-style:none;margin:0 0 1.75rem;padding:0;display:flex;flex-wrap:wrap;gap:.6rem}
+.folio li{border:1px solid var(--line);border-radius:999px;padding:.35rem .9rem;font-size:.92rem}
+.prize{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.big{font:700 clamp(3rem,9vw,6.5rem)/1 "Cormorant Garamond",serif;color:var(--gold);font-variant-numeric:tabular-nums}
+.facts{display:grid;gap:1.25rem}
+.facts div{border-left:2px solid var(--aether);padding-left:1rem}
+.facts strong{display:block;font:700 1.6rem "Cormorant Garamond",serif}
+.facts span{color:var(--mute);font-size:.95rem}
+.fields{display:flex;flex-wrap:wrap;gap:.7rem}
+.fields button{font:500 1rem Manrope;color:var(--ink);background:var(--deep);border:1px solid var(--line);border-radius:999px;padding:.6rem 1.15rem;cursor:pointer;transition:all .2s}
+.fields button:hover,.fields button[aria-pressed=true]{border-color:var(--aether);color:var(--aether);transform:translateY(-2px)}
+#fnote{margin-top:1.5rem;min-height:3.2em;color:var(--mute);max-width:56ch}
+.band{background:linear-gradient(120deg,color-mix(in srgb,var(--violet) 30%,var(--deep)),var(--deep));text-align:center}
+.band p{max-width:46ch;margin:0 auto 2rem;color:var(--mute)}
+footer{padding:2rem 0;color:var(--mute);font-size:.88rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+@media (max-width:860px){
+ nav a.hide{display:none}
+ .hero .wrap{grid-template-columns:1fr;padding-top:2.25rem}
+ .codex{grid-template-columns:1fr}
+ .tabs{flex-direction:row;border-right:0;border-bottom:1px solid var(--line);overflow-x:auto}
+ .tabs button{font-size:1.35rem;padding:1rem;border-bottom:0;white-space:nowrap}
+ .tabs button[aria-selected=true]{box-shadow:inset 0 -3px var(--gold)}
+ .folio{padding:1.5rem}
+ .prize{grid-template-columns:1fr;gap:2rem}
+}
+@media (prefers-reduced-motion:reduce){.rg{animation:none}html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+ <a class="logo" href="#top">Techfest<small>IIT Bombay</small></a>
+ <nav><a class="hide" href="#codex">The Codex</a><a class="hide" href="#prize">Prizes</a><a class="hide" href="#fields">Fields</a>
+ <button class="btn line sm" id="theme" aria-label="Switch between night and parchment themes">Night / Parchment</button></nav>
+</div></header>
+
+<main id="top">
+<div class="hero" id="hero"><div class="wrap">
+ <div>
+  <div class="edition">30th edition · Asia's largest science and technology festival</div>
+  <h1>An Aetherial <em>Renaissance</em></h1>
+  <p class="dates">16 to 18 December 2026, IIT Bombay, Mumbai</p>
+  <p class="lede">Heritage meets futuristic technology. Compete, learn and witness what's next, three days on one campus.</p>
+  <div class="cta"><a class="btn" href="https://techfest.org/" target="_blank" rel="noopener">Register free</a><a class="btn line" href="https://techfest.org/workshops" target="_blank" rel="noopener">Browse workshops</a></div>
+ </div>
+ <div class="orrery" aria-label="Countdown to Techfest">
+  <svg viewBox="0 0 600 600" aria-hidden="true" fill="none" stroke-linecap="round">
+   <g class="rg r1"><circle cx="300" cy="300" r="285" stroke="var(--line)" stroke-width="1.5"/><circle cx="300" cy="300" r="285" stroke="var(--gold)" stroke-width="10" stroke-dasharray="1 23.9" opacity=".8"/><circle cx="300" cy="15" r="9" fill="var(--gold)"/></g>
+   <g class="rg r2"><circle cx="300" cy="300" r="235" stroke="var(--violet)" stroke-width="1.5" stroke-dasharray="6 10"/><rect x="134" y="134" width="332" height="332" stroke="var(--line)" stroke-width="1.5"/><circle cx="65" cy="300" r="7" fill="var(--aether)"/></g>
+   <g class="rg r3"><circle cx="300" cy="300" r="180" stroke="var(--aether)" stroke-width="1.5" opacity=".7"/><path d="M300 120L456 390H144Z" stroke="var(--gold)" stroke-width="1.2" opacity=".7"/><circle cx="300" cy="120" r="6" fill="var(--violet)"/><circle cx="456" cy="390" r="6" fill="var(--gold)"/></g>
+   <g class="rg r4"><circle cx="300" cy="300" r="130" stroke="var(--line)" stroke-width="1.5" stroke-dasharray="2 8"/><circle cx="430" cy="300" r="5" fill="var(--aether)"/></g>
+  </svg>
+  <div class="clock"><b id="d">--</b><span>days to the opening</span><div class="hms" id="hms">--:--:--</div></div>
+ </div>
+</div></div>
+
+<section id="codex"><div class="wrap">
+ <h2>The Codex</h2>
+ <p class="sub">Three ways to take part. Open a folio to see what's inside.</p>
+ <div class="codex">
+  <div class="tabs" role="tablist" aria-label="Ways to take part">
+   <button role="tab" aria-selected="true" data-i="0">Compete</button>
+   <button role="tab" aria-selected="false" data-i="1">Learn</button>
+   <button role="tab" aria-selected="false" data-i="2">Witness</button>
+  </div>
+  <div class="folio" role="tabpanel" aria-live="polite">
+   <h3 id="ft"></h3><p id="fp"></p><ul id="fl"></ul><a class="btn" id="fa" href="https://techfest.org/" target="_blank" rel="noopener"></a>
+  </div>
+ </div>
+</div></section>
+
+<section id="prize"><div class="wrap prize">
+ <div>
+  <div class="edition">Combined prize pool</div>
+  <div class="big" id="pool" aria-label="More than one crore rupees">₹0</div>
+  <p class="sub" style="margin-top:1rem">And it costs nothing to enter. Registration for competitions is free for every student, from any college.</p>
+ </div>
+ <div class="facts">
+  <div><strong>Robotics, hackathons, case competitions</strong><span>Build it, ship it, pitch it.</span></div>
+  <div><strong>25+ workshop domains</strong><span>Hands-on, taught by industry experts.</span></div>
+  <div><strong>IIT Bombay certificate</strong><span>Earned by completing a workshop.</span></div>
+ </div>
+</div></section>
+
+<section id="fields"><div class="wrap">
+ <h2>Pick a field</h2>
+ <p class="sub">Tap one to see how Techfest covers it. There are many more on the site.</p>
+ <div class="fields" id="fbtn"></div>
+ <p id="fnote" role="status"></p>
+</div></section>
+
+<section class="band"><div class="wrap">
+ <h2>Bring Techfest to your college</h2>
+ <p>Become a College Ambassador. Represent Techfest on your campus and get exclusive perks and certificates.</p>
+ <a class="btn" href="https://techfest.org/" target="_blank" rel="noopener">Apply on techfest.org</a>
+</div></section>
+</main>
+<footer><div class="wrap"><span>An independent design concept. Not the official website. Official details live at techfest.org.</span><span>Techfest, IIT Bombay</span></div></footer>
+
+<script>
+var $=function(i){return document.getElementById(i)};
+var target=new Date('2026-12-16T00:00:00+05:30').getTime();
+function p(n){return String(n).padStart(2,'0')}
+function tick(){var s=Math.max(0,Math.floor((target-Date.now())/1000));
+ $('d').textContent=Math.floor(s/86400);
+ $('hms').textContent=p(Math.floor(s%86400/3600))+':'+p(Math.floor(s%3600/60))+':'+p(s%60)}
+tick();setInterval(tick,1000);
+
+var hero=$('hero');
+hero.addEventListener('pointermove',function(e){var r=hero.getBoundingClientRect();
+ var x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+ hero.style.setProperty('--gx',x*100+'%');hero.style.setProperty('--gy',y*100+'%');
+ hero.style.setProperty('--mx',(x-.5)*2);hero.style.setProperty('--my',(y-.5)*2)});
+
+var F=[
+ {t:'Compete',p:'Robotics challenges, hackathons and case competitions with a combined prize pool above one crore rupees. Free to enter.',l:['Robotics','Hackathons','Case competitions'],a:'See competitions'},
+ {t:'Learn',p:'Hands-on workshops across 25+ in-demand domains, taught by industry experts. Finish one and earn an IIT Bombay certificate.',l:['Artificial intelligence','Deep learning','Robotics','Coding'],a:'Book a workshop'},
+ {t:'Witness',p:'Speaker sessions and lectures from leaders in their fields, plus exhibitions that put new ideas on display.',l:['Speaker sessions','Guest lectures','Exhibitions'],a:'See the lineup'}
+];
+var tabs=document.querySelectorAll('[role=tab]');
+function show(i){tabs.forEach(function(b,k){b.setAttribute('aria-selected',k==i)});var x=F[i];
+ $('ft').textContent=x.t;$('fp').textContent=x.p;$('fa').textContent=x.a;
+ $('fa').href=i==1?'https://techfest.org/workshops':'https://techfest.org/';
+ $('fl').innerHTML=x.l.map(function(s){return '<li>'+s+'</li>'}).join('')}
+tabs.forEach(function(b){b.addEventListener('click',function(){show(+b.dataset.i)})});show(0);
+
+var FD={'Robotics':'Robotics challenges are part of the competition line-up, and robotics workshops are on offer too.',
+'Artificial intelligence':'AI workshops give you hands-on practice and an IIT Bombay certificate.',
+'Deep learning':'Deep learning has its own workshop track for people ready to go beyond the basics.',
+'Coding':'Coding workshops and hackathons let you learn first, then build under pressure.',
+'Entrepreneurship':'Case competitions and entrepreneurship tracks test how you think about real businesses.',
+'Finance':'Finance shows up in the case competitions and in the wider workshop range.'};
+$('fbtn').innerHTML=Object.keys(FD).map(function(k){return '<button aria-pressed="false">'+k+'</button>'}).join('');
+$('fbtn').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;
+ document.querySelectorAll('#fbtn button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});
+ $('fnote').textContent=FD[b.textContent]});
+
+var done=false,rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+function fmt(n){return '₹'+n.toLocaleString('en-IN')+'+'}
+function count(){var t0=performance.now();(function f(t){var k=Math.min(1,(t-t0)/1800);$('pool').textContent=fmt(Math.round(10000000*(1-Math.pow(1-k,3))));if(k<1)requestAnimationFrame(f)})(t0)}
+if(rm){$('pool').textContent=fmt(10000000)}
+else{new IntersectionObserver(function(en,o){if(en[0].isIntersecting&&!done){done=true;count();o.disconnect()}},{threshold:.5}).observe($('pool'))}
+
+var root=document.documentElement;
+$('theme').addEventListener('click',function(){
+ var dark=root.dataset.theme?root.dataset.theme==='dark':!matchMedia('(prefers-color-scheme:light)').matches;
+ root.dataset.theme=dark?'light':'dark'});
+</script>
+</body>
+</html>
